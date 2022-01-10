@@ -57,21 +57,21 @@ public class MinimumDepthOfBinaryTree {
     class Solution {
         public int minDepth(TreeNode root) {
             // 根节点null返回0
-            if(root==null){
+            if (root == null) {
                 return 0;
             }
-            if(root.left ==null && root.right==null){
+            if (root.left == null && root.right == null) {
                 return 1;
             }
             int minValue = Integer.MAX_VALUE;
             // 递归左右节点的最小值
-            if(root.left!= null){
+            if (root.left != null) {
                 minValue = Math.min(minValue, minDepth(root.left));
             }
-            if(root.right!= null){
-                minValue = Math.min(minValue,minDepth(root.right));
+            if (root.right != null) {
+                minValue = Math.min(minValue, minDepth(root.right));
             }
-            return minValue+1;
+            return minValue + 1;
         }
     }
 
